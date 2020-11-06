@@ -13,6 +13,7 @@
 ActiveRecord::Schema.define(version: 2020_11_02_185047) do
 
   create_table "tweets", force: :cascade do |t|
+    t.integer "user_id"
     t.string "content"
   end
 
