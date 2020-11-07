@@ -17,12 +17,12 @@ class UsersController < ApplicationController
     end 
   end
 
-  get '/login' do 
-    if logged_in? 
+  get '/login' do
+    if logged_in?
         redirect '/tweets'
-    else  
-        erb :'users/login'
-    end 
+    end
+    
+    erb :'users/login' 
   end
 
   post '/login' do 
@@ -37,7 +37,7 @@ class UsersController < ApplicationController
   end
 
   get '/logout' do
-    if logged_in? 
+    if Helpers.logged_in?(session) 
         session.clear
         redirect '/login'
     else  
